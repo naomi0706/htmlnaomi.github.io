@@ -1,18 +1,310 @@
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
-    <title>Welcome to Internet Technology Fundamentals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 5 - Responsive Web</title>
+  <style>
+    /* ===== CSS VARIABLES (Style Guide) ===== */
+    :root {
+      --primary:   #2c3e50;
+      --accent:    #e74c3c;
+      --light-bg:  #ecf0f1;
+      --white:     #ffffff;
+      --text:      #333333;
+      --muted:     #7f8c8d;
+      --border:    #dce1e3;
+      --font-head: Georgia, 'Times New Roman', serif;
+      --font-body: 'Trebuchet MS', Tahoma, sans-serif;
+    }
+
+    /* ===== RESET ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--light-bg); }
+
+    /* ===== CONTAINER ===== */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      font-family: var(--font-head);
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      font-size: 0.95rem;
+      color: #bdc3c7;
+      margin-top: 4px;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background: var(--accent);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      display: block;
+      padding: 14px 20px;
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    nav ul li a:hover {
+      background: rgba(0,0,0,0.15);
+    }
+
+    /* ===== MAIN CONTENT AREA ===== */
+    .main-row {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+    }
+
+    /* ===== CONTENT (left 2/3) ===== */
+    .content {
+      flex: 2;
+      min-width: 0;
+    }
+
+    .content-section {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .content-section h2 {
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+
+    .content-section p {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    /* Video embed */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ===== SIDEBAR (right 1/3) ===== */
+    .sidebar {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sidebar-widget {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-widget h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-widget ul {
+      list-style: none;
+    }
+    .sidebar-widget ul li {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .sidebar-widget ul li:last-child { border-bottom: none; }
+    .sidebar-widget ul li a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .sidebar-widget ul li a:hover { text-decoration: underline; }
+
+    .sidebar-widget p {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      color: #bdc3c7;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+    }
+    footer span { color: var(--accent); }
+
+    /* ================================================
+       MEDIA QUERIES — Responsive Design (Даалгавар 3)
+       ================================================ */
+
+    /* Таблет: 481px – 768px */
+    @media (max-width: 768px) {
+      .main-row {
+        flex-direction: column;
+      }
+      header h1 { font-size: 1.6rem; }
+      nav ul li a { padding: 10px 14px; font-size: 0.88rem; }
+    }
+
+    /* Утас: 480px хүртэл */
+    @media (max-width: 480px) {
+      header h1 { font-size: 1.3rem; }
+      header p  { font-size: 0.8rem; }
+
+      nav ul { flex-direction: column; }
+      nav ul li a {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+      }
+
+      .content-section, .sidebar-widget {
+        padding: 14px;
+      }
+
+      .content-section h2 { font-size: 1.1rem; }
+    }
+  </style>
 </head>
-<body> 
-    <h1>Welcome to Laboratory1</h1>
-    <p>Lorem ipsum dolor sit amet consectetur ad ipisicing elit.
-         A harum qui quam animi illo nostrum, expedita repellendus
-          tempore ullam sint explicabo, possimus quos suscipit
-           officia nemo blanditiis numquam aut voluptas. <br/>
-           Lorem ipsum, dolor sit amet consectetur adipisicing 
-           elit. Quas optio voluptate fugit. Hic non, itaque
-            provident distinctio aut laboriosam qui, corrupti 
-            doloremque quibusdam deserunt similique numquam 
-            beatae sunt reiciendis vel. </p>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>Study with me <3 </h1>
+      <p>Лаборатори 5 — HTML · CSS · Responsive Design</p>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#">Нүүр</a></li>
+        <li><a href="#">Pomodoro цаг</a></li>
+        <li><a href="#">To do list</a></li>
+        <li><a href="#">Assignments</a></li>
+        <li><a href="#">Хуваарь</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="container">
+    <div class="main-row">
+
+      <!-- LEFT: CONTENT -->
+      <main class="content">
+
+        <!-- Video Section -->
+        <div class="content-section">
+          <h2>Study music</h2>
+          <div class="video-wrap">
+            <!-- YouTube embed: "study music that helps you to focus girll" -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jZ2CBOPu5fQ?si=6yBdUgTI9l-k6pRN&amp;controls=0&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p>Дээрх видео нь хичээл хийхэд төвлөрлийг дэмжих, тайван байлгах ид шидтэй хөгжим жүү.</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="content-section">
+          <h2>Хичээлийг уйлуулж шалгалтаа А авах нууц техник</h2>
+           <p>Та өдөр бүр цагаа зохицуулж чадахгүй байна уу? Дараа нь та ашиглах хэрэгтэй байж магадгүй юм Помодоро судлах арга. Энэ арга нь таныг ямар ч тэмцэлгүйгээр өдөр тутмын ажлаа зохион байгуулахад чиглүүлж чадна. Тиймээс, хэрэв та энэ төрлийн аргын талаар илүү ихийг мэдэхийг хүсч байвал энэ мэдээллийн нийтлэлийг унших нь хамгийн сайн арга юм.</p>
+     
+          <p> ◆ Ажлын цагийг тохируулах нь янз бүрийн үйл ажиллагаа эсвэл ажилд анхаарлаа төвлөрүүлэхэд тустай. Энэ нь таныг үймүүлж, өөр зүйлд сатаарахаас сэргийлж чадна. Энэ нь таныг олон нийтийн сүлжээгээ ашиглах, шалгах, өөр ажил солих, кино үзэх гэх мэтээс урьдчилан сэргийлэхэд тусална. Помодоро судлах аргын тусламжтайгаар та хүссэн үр дүндээ шууд, хялбархан хүрч чадна.
+
+Таныг эхлүүлэхэд тусална </br>
+
+◆ Ажлын ачааллаар бөмбөгдөх үе байдаг. Энэ нь хэтэрхий хүнд санагдаж, юу хийхээ мэдэхгүй эргэлзэж магадгүй юм. Энэ тохиолдолд Помодоро судлах аргыг ашиглах нь чухал юм. Энэ арга нь танд байгаа ажил бүрийг зохион байгуулахад тань туслах болно. Та даалгавар бүрийг нэг нэгээр нь хялбархан удирдах боломжтой. Тиймээс судалгааны арга нь таны үйл ажиллагааг илүү зохион байгуулалттай, удирдах боломжтой болгох үр дүнтэй аргуудын нэг юм.
+
+Үр ашгийг дээшлүүлэх </br>
+
+◆ Хойшлуулах нь хамгийн сайн дайсан юм. Энэ нь хүн бүрийг богино хугацаанд ажлаа дуусгахаас сэргийлж чадна. Тиймээс хамгийн сайн шийдэл бол Помодоро техникийг ашиглах явдал юм. Энэхүү техник нь өөрийгөө илүү хариуцлагатай байлгахад түлхэж, цагаа удирдахад тусална. Энэ нь цагаа үр дүнтэй ашиглах, зорилгодоо хүрэхэд тань туслах болно. Тиймээс, техникийг ашиглах үед та цаашид хойшлуулж, хийх ёстой бүх зүйлээ даруй хийх боломжгүй байх магадлал өндөр байна.
+
+Стресс, түгшүүрийг арилгана</br>
+
+◆ Зарим ажлыг хийхдээ эцсийн хугацаа ойртож байна гэж хүлээ. Тиймээс заримдаа цаг хугацаа нь таныг түгшүүр, стресст оруулах дайсан байж болно. Тиймээс таны цагийг зохицуулах хүрээтэй байх нь чухал юм. Ялангуяа янз бүрийн ажлыг дуусгах үед бүх зүйлийг хянах нь тустай байх болно. Энэ нь таны сэтгэлийн түгшүүр, стрессийг нэгэн зэрэг арилгах боломжтой.</p>
+            </div>
+
+      </main>
+
+      <!-- RIGHT: SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="sidebar-widget">
+          <h3>Холбоос</h3>
+          <ul>
+            <li><a href="https://stud-sisi.num.edu.mn/" target="_blank">SISI</a></li>
+            <li><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank">Bootstrap</a></li>
+            <li><a href="https://css-tricks.com" target="_blank">CSS-Tricks</a></li>
+            <li><a href="https://validator.w3.org" target="_blank">W3C Validator</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Танилцуулга</h3>
+          <p>Энэ вэб хуудас нь Интернэт Технологийн Үндэс хичээлийн 5-р лабораторийн даалгаврын хүрээнд HTML, CSS ашиглан хийгдсэн болно.</p>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Сэдвүүд</h3>
+          <ul>
+            <li>Pomodoro timer</li>
+            <li>Зөв төлөвлөгөө</li>
+            <li>Study music</li>
+            <li>Төвлөрөл</li>
+            <li>Шалгалт</li>
+          </ul>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 Интернэт Технологийн Үндэс — Бүх эрх хуулиар хамгаалагдсан <span>♥</span></p>
+  </footer>
+
 </body>
 </html>
