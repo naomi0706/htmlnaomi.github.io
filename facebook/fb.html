@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>thefacebook - Naomi's Profile</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      background-color: #b0b8c8;
+      color: #333;
+    }
+    a { color: #3b5998; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .logo { font-size: 26px; font-weight: bold; font-family: Georgia, serif; color: #c8d8f0; letter-spacing: 1px; padding: 6px 10px; }
+    .logo span { color: #7090c0; }
+    .nav-link { color: #c8d8f0; font-size: 11px; padding: 0 6px; }
+    .nav-link:hover { color: white; }
+    .profile-bar { background-color: #3b5998; color: white; font-weight: bold; font-size: 12px; padding: 3px 8px; }
+    .section-header { background-color: #6070a0; color: white; font-weight: bold; font-size: 11px; padding: 2px 6px; }
+    .sub-header { background-color: #8898c0; color: white; font-size: 11px; font-weight: bold; padding: 2px 6px; margin-top: 4px; }
+    .box { background-color: #dde4f0; border: 1px solid #8090b8; margin-bottom: 4px; }
+    .edit-link { color: #c8d8f0; font-size: 10px; font-weight: normal; }
+    .info-label { color: #555; font-weight: bold; vertical-align: top; white-space: nowrap; padding: 1px 8px 1px 2px; font-size: 11px; }
+    .info-value { color: #222; vertical-align: top; padding: 1px 2px; font-size: 11px; }
+    .left-nav a { display: block; color: #3b5998; font-size: 11px; padding: 1px 0; }
+    input[type="text"], input[type="password"] { border: 1px solid #8090b8; padding: 1px 3px; font-size: 10px; }
+    input[type="submit"] { background-color: #5b74a8; color: white; border: 1px solid #3b5998; padding: 1px 6px; font-size: 10px; cursor: pointer; }
+    .photo-placeholder { background-color: #4a5060; border: 1px solid #6070a0; text-align: center; color: #aaa; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<table width="100%" cellpadding="0" cellspacing="0" bgcolor="#21366d">
+  <tr>
+    <td valign="bottom" style="padding:4px 8px 2px;">
+      <span class="logo"><span>[</span> thefacebook <span>]</span></span>
+    </td>
+    <td align="right" valign="bottom" style="padding-bottom:5px;">
+      <a href="#" class="nav-link">home</a>
+      <a href="#" class="nav-link">search</a>
+      <a href="#" class="nav-link">global</a>
+      <a href="#" class="nav-link">social net</a>
+      <a href="#" class="nav-link">invite</a>
+      <a href="#" class="nav-link">faq</a>
+      <a href="#" class="nav-link">logout</a>
+    </td>
+    <td align="right" valign="bottom" style="padding-bottom:5px; padding-right:12px;">
+      <span style="color:#aac0e0; font-weight:bold; font-size:11px;">Scranton</span>
+    </td>
+  </tr>
+</table>
+
+<!-- PROFILE NAME BAR -->
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="profile-bar">
+      Naomi's Profile &nbsp;
+      <span style="color:#c0d0e8; font-weight:normal; font-size:10px;">(This is you)</span>
+    </td>
+  </tr>
+</table>
+
+<!-- MAIN 3-COLUMN LAYOUT -->
+<table width="100%" cellpadding="4" cellspacing="4">
+  <tr valign="top">
+
+    <!-- LEFT COLUMN -->
+    <td width="140" valign="top">
+
+      <!-- Quick Search -->
+      <table width="100%" cellpadding="0" cellspacing="0" class="box">
+        <tr><td class="section-header">quick search</td></tr>
+        <tr><td style="padding:3px;">
+          <input type="text" style="width:78px;">&nbsp;<input type="submit" value="go">
+        </td></tr>
+      </table>
+
+      <!-- Left Nav -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:3px; background-color:#dde4f0; border:1px solid #8090b8;">
+        <tr><td style="padding:5px 6px;" class="left-nav">
+          <a href="#"><b>My Profile</b> [edit]</a>
+          <a href="#">My Groups</a>
+          <a href="#">My Events</a>
+          <a href="#">My Messages</a>
+          <a href="#">My Away Message</a>
+          <a href="#">My Mobile Info</a>
+          <br>
+          <a href="#">My Account</a>
+          <a href="#">My Privacy</a>
+        </td></tr>
+      </table>
+
+      <!-- Connection -->
+      <table width="100%" cellpadding="0" cellspacing="0" class="box" style="margin-top:3px;">
+        <tr><td class="section-header">Connection</td></tr>
+        <tr><td style="padding:5px; text-align:center; font-size:10px; color:#555;">
+          <div class="photo-placeholder" style="width:80px; height:60px; margin:0 auto 4px; line-height:60px; font-size:10px;">photo</div>
+          This is you.
+        </td></tr>
+      </table>
+
+      <!-- Access -->
+      <table width="100%" cellpadding="0" cellspacing="0" class="box" style="margin-top:3px;">
+        <tr><td class="section-header">Access</td></tr>
+        <tr><td style="padding:5px; font-size:10px; color:#444;">
+          Naomi is currently logged in from a non-residential location.
+        </td></tr>
+      </table>
+
+      <!-- Other Schools -->
+      <table width="100%" cellpadding="0" cellspacing="0" class="box" style="margin-top:3px;">
+        <tr><td class="section-header">Other Schools &nbsp;<a href="#" class="edit-link">[edit]</a></td></tr>
+        <tr><td style="padding:5px; font-size:10px;">
+          <a href="#">Dunmore HS '00</a>
+        </td></tr>
+      </table>
+
+    </td>
+
+    <!-- CENTER COLUMN (Picture) -->
+    <td width="175" valign="top">
+
+      <!-- Picture -->
+      <table width="100%" cellpadding="0" cellspacing="0" class="box">
+        <tr><td class="section-header">Picture &nbsp;<a href="#" class="edit-link">[edit]</a></td></tr>
+        <tr><td style="padding:6px; text-align:center;">
+          <div class="photo-placeholder" style="width:150px; height:140px; margin:0 auto; line-height:140px; font-size:13px; color:#bbb;">&nbsp;[ photo ]</div>
+        </td></tr>
+      </table>
+
+      <!-- Links under photo -->
+      <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:3px; background-color:#dde4f0; border:1px solid #8090b8;">
+        <tr><td style="padding:5px 6px;" class="left-nav">
+          <a href="#">Visualize My Friends</a>
+          <a href="#">Edit My Profile</a>
+          <a href="#">My Account Preferences</a>
+          <a href="#">My Privacy Preferences</a>
+        </td></tr>
+      </table>
+
+    </td>
+
+    <!-- RIGHT COLUMN (Information) -->
+    <td valign="top">
+
+      <table width="100%" cellpadding="0" cellspacing="0" class="box">
+        <tr><td class="section-header">Information &nbsp;<a href="#" class="edit-link">[edit]</a></td></tr>
+        <tr><td style="padding:5px;">
+
+          <!-- Account Info -->
+          <div class="sub-header">Account Info:</div>
+          <table cellpadding="1" cellspacing="0" style="margin-top:2px;">
+            <tr>
+              <td class="info-label">Name:</td>
+              <td class="info-value">Naomi</td>
+            </tr>
+            <tr>
+              <td class="info-label">Member Since:</td>
+              <td class="info-value">July 06, 2006</td>
+            </tr>
+            <tr>
+              <td class="info-label">Last Update:</td>
+              <td class="info-value">February 3, 2007</td>
+            </tr>
+          </table>
+
+          <!-- Basic Info -->
+          <div class="sub-header" style="margin-top:5px;">Basic Info:</div>
+          <table cellpadding="1" cellspacing="0" style="margin-top:2px;">
+            <tr>
+              <td class="info-label">Email:</td>
+              <td class="info-value"><a href="#">24b1num0706@stud.num.edu.mn</a> &nbsp;<a href="#" style="color:#5070b0; font-size:10px;">[edit]</a></td>
+            </tr>
+            <tr>
+              <td class="info-label">Status:</td>
+              <td class="info-value">Alumnus/Alumna</td>
+            </tr>
+            <tr>
+              <td class="info-label">Sex:</td>
+              <td class="info-value">Female</td>
+            </tr>
+            <tr>
+              <td class="info-label">Year:</td>
+              <td class="info-value">2006</td>
+            </tr>
+            <tr>
+              <td class="info-label">Concentration:</td>
+              <td class="info-value">Computing Sciences<br>Mathematics</td>
+            </tr>
+            <tr>
+              <td class="info-label">Phone:</td>
+              <td class="info-value">99-562-562</td>
+            </tr>
+            <tr>
+              <td class="info-label">High School:</td>
+              <td class="info-value">SB-1</td>
+            </tr>
+          </table>
+
+          <!-- Extended Info -->
+          <div class="sub-header" style="margin-top:5px;">Extended Info: &nbsp;<a href="#" style="color:#e0e8f8; font-size:10px; font-weight:normal;">[edit]</a></div>
+          <table cellpadding="1" cellspacing="0" style="margin-top:2px;">
+            <tr>
+              <td class="info-label">Screenname:</td>
+              <td class="info-value">Naomiz</td>
+            </tr>
+            <tr>
+              <td class="info-label">Looking For:</td>
+              <td class="info-value">
+                Friendship<br>
+                Dating<br>
+                A Relationship<br>
+                Random play<br>
+                Whatever I can get
+              </td>
+            </tr>
+            <tr>
+              <td class="info-label">Interested In:</td>
+              <td class="info-value" style="color:#cc0000;">Man</td>
+            </tr>
+            <tr>
+              <td class="info-label">Relationship&nbsp;Status:</td>
+              <td class="info-value">Single</td>
+            </tr>
+            <tr>
+              <td class="info-label">Political Views:</td>
+              <td class="info-value">Liberal</td>
+            </tr>
+            <tr>
+              <td class="info-label">Interests:</td>
+              <td class="info-value">Drinking, Football, Basketball, Tennis,<br>saying you'll have that</td>
+            </tr>
+          </table>
+
+        </td></tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+<!-- FOOTER -->
+<table width="100%" cellpadding="6" cellspacing="0">
+  <tr>
+    <td align="center" style="border-top:1px solid #8090b8; color:#6070a0; font-size:10px;">
+      <a href="#" style="color:#5060a0;">About</a> ·
+      <a href="#" style="color:#5060a0;">FAQ</a> ·
+      <a href="#" style="color:#5060a0;">Terms</a> ·
+      <a href="#" style="color:#5060a0;">Privacy</a> ·
+      <a href="#" style="color:#5060a0;">Contact</a>
+      <br><br>
+      thefacebook &copy; 2004
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

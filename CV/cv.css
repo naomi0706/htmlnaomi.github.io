@@ -1,0 +1,364 @@
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #f0ede8;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 794px;
+      min-height: 1123px;
+      background: #ffffff;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOP HEADER ───────────────────────── */
+    .header {
+      background: #1a2744;
+      padding: 36px 48px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Монгол алхан угалз — header баруун тал */
+    .header-ornament {
+      position: absolute;
+      right: 0; top: 0;
+      width: 160px; height: 100%;
+      opacity: 0.08;
+    }
+
+    .header-name {
+      font-family: 'Source Serif 4', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .header-role {
+      font-size: 13px;
+      font-weight: 300;
+      color: #a8b8d8;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .header-contacts {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      color: #c8d8f0;
+      font-weight: 300;
+    }
+
+    .contact-pill svg {
+      width: 13px; height: 13px;
+      fill: #7090c0;
+      flex-shrink: 0;
+    }
+
+    /* Монгол угалзан зурвас — header доор */
+    .mn-stripe {
+      height: 6px;
+      background: repeating-linear-gradient(
+        90deg,
+        #b5832a 0px,  #b5832a 10px,
+        #1a2744 10px, #1a2744 14px,
+        #d4a84b 14px, #d4a84b 20px,
+        #1a2744 20px, #1a2744 24px,
+        #8b1a1a 24px, #8b1a1a 34px,
+        #1a2744 34px, #1a2744 38px,
+        #d4a84b 38px, #d4a84b 44px,
+        #1a2744 44px, #1a2744 48px,
+        #b5832a 48px, #b5832a 58px,
+        #1a2744 58px, #1a2744 62px
+      );
+      background-size: 62px 6px;
+    }
+
+    /* ── BODY ─────────────────────────────── */
+    .body {
+      display: flex;
+      flex: 1;
+    }
+
+    /* ── LEFT SIDEBAR ─────────────────────── */
+    .sidebar {
+      width: 230px;
+      min-width: 230px;
+      background: #f7f6f3;
+      border-right: 1px solid #e8e4de;
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+
+    .s-label {
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1a2744;
+      font-weight: 600;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1.5px solid #1a2744;
+    }
+
+    .s-item {
+      font-size: 11.5px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 5px;
+      font-weight: 300;
+    }
+
+    .s-item strong {
+      color: #222;
+      font-weight: 600;
+      display: block;
+      font-size: 11px;
+    }
+
+    /* Skill bars */
+    .skill-row {
+      margin-bottom: 9px;
+    }
+
+    .skill-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3px;
+    }
+
+    .skill-name {
+      font-size: 11px;
+      color: #333;
+      font-weight: 400;
+    }
+
+    .skill-pct {
+      font-size: 10px;
+      color: #888;
+    }
+
+    .skill-track {
+      height: 3px;
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    .skill-fill {
+      height: 100%;
+      background: #1a2744;
+      border-radius: 2px;
+    }
+
+    /* Language */
+    .lang-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+
+    .lang-name {
+      font-size: 11.5px;
+      color: #333;
+    }
+
+    .lang-dots {
+      display: flex;
+      gap: 3px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #d0d0d0;
+    }
+
+    .dot.on { background: #1a2744; }
+
+    /* Монгол жижиг угалз чимэг — sidebar доод хэсэгт */
+    .sidebar-ornament {
+      margin-top: auto;
+      padding-top: 16px;
+    }
+
+    /* ── MAIN CONTENT ─────────────────────── */
+    .main {
+      flex: 1;
+      padding: 28px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .m-label {
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #8b1a1a;
+      font-weight: 600;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #e0d8d0;
+    }
+
+    /* Timeline entry */
+    .entry {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-date {
+      font-size: 10.5px;
+      color: #999;
+      padding-top: 1px;
+      text-align: right;
+      line-height: 1.5;
+    }
+
+    .entry-body {
+      padding-left: 14px;
+      border-left: 2px solid #e0d8d0;
+      position: relative;
+    }
+
+    .entry-body::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 5px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #1a2744;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 0 1px #1a2744;
+    }
+
+    .entry-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+
+    .entry-sub {
+      font-size: 11px;
+      color: #8b1a1a;
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.2px;
+    }
+
+    .entry-desc {
+      font-size: 11.5px;
+      color: #555;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* Summary */
+    .summary {
+      font-size: 12px;
+      color: #444;
+      line-height: 1.75;
+      font-weight: 300;
+      padding: 12px 16px;
+      background: #f7f6f3;
+      border-left: 3px solid #1a2744;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 10.5px;
+      color: #1a2744;
+      border: 1px solid #b8c8e0;
+      padding: 3px 10px;
+      border-radius: 2px;
+      font-weight: 400;
+      background: #f0f4fa;
+    }
+
+    /* Achievement */
+    .ach {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 9px;
+      align-items: flex-start;
+    }
+
+    .ach-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #b5832a;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .ach-text {
+      font-size: 11.5px;
+      color: #444;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .ach-text b {
+      color: #222;
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ───────────────────────────── */
+    .footer-stripe {
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        #1a2744 0px,  #1a2744 10px,
+        #b5832a 10px, #b5832a 16px,
+        #1a2744 16px, #1a2744 26px,
+        #8b1a1a 26px, #8b1a1a 32px,
+        #1a2744 32px, #1a2744 42px,
+        #b5832a 42px, #b5832a 48px,
+        #1a2744 48px, #1a2744 58px
+      );
+      background-size: 58px 4px;
+    }
+    .tag:hover{
+        transition-duration: 1s;
+        font-size: 10.5px;
+        background-color: #1a2744;
+        border: 2px solid #b8c8e0;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 2px;
+        font-weight: 400;
+    }
